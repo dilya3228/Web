@@ -1,0 +1,289 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #201b2d;
+    font-style: 15px;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+div, p, input, button, form, span, a, ul, li{
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+p{
+    line-height: 1.65em;
+}
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+    padding-bottom: 75px;
+}
+
+
+.header{
+    background: #4EBEFE;
+    background: -webkit-linear-gradient(top left, #4EBEFE, #3790D9);
+    background: -moz-linear-gradient(top left, #4EBEFE, #3790D9);
+    background: linear-gradient(to bottom right, #4EBEFE, #3790D9);
+    padding-top: 100px;
+    color: white;
+    padding-bottom: 15px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.offer{
+    margin-top: 176px;;
+    width: 500px;
+}
+
+.title{
+    font-size: 36px;
+}
+
+.title span{
+    font-size: 59px;
+}
+
+.intro{
+    margin-top: 30px;
+    margin-bottom: 37px;
+    width: 380px;
+}
+
+.btn{
+    font-family: 'Montserrat', sans-serif;
+    background: #ffd429;
+    color: #000;
+    display: block;
+    width: 205px;
+    padding: 19px 0;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.btn:hover{
+    background: #d9860e;
+}
+
+.desktop{
+    margin-top: 72px;
+}
+
+.learn{
+    padding-top: 108px;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+}
+
+.section-title{
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.skill{
+    width: 360px;
+    background: url('../img/icon1.jpg') no-repeat top;
+    padding-top: 80px;
+    padding-left: 15px;
+}
+
+.skill-title{
+    font-size: 19px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.skill-text{
+    margin-top: 7px;
+    text-align: center;
+}
+
+.skill-free{
+    width: 320px;
+    background: url('../img/icon2.jpg') no-repeat no-repeat top;
+    text-align: center;
+}
+
+.skill-change{
+    background: url('../img/icon3.jpg') no-repeat top;
+    padding-top: 80px;
+    width: 355px;
+    padding-right: 15px;
+    margin-right: 0;
+}
+
+.mail{
+    background: #ecf3f8;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+.form{
+    margin-top: 40px;
+}
+
+.input{
+    width: 345px;
+    border: 1px solid #bbbbbb;
+    border-radius: 1px;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    height: 52px;
+    padding-left: 24px;
+    margin-bottom: 15px;
+}
+
+.form{
+    margin-top: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 345px;
+}
+
+.btn-form{
+    width: 343px;
+    display: inline;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto; 
+    border: 0;
+
+}
+
+.footer{
+    background: #164d7a;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer div{
+    padding: 0;
+}
+
+.credits{
+    color: #d4cee3;
+    font-style: 14px;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.red{
+    color: red;
+}
+
+.animated{
+    opacity: 0;
+}
+
+/*Responsive*/
+
+/*992px - 1200px*/
+@media screen and (max-width: 1200px){
+    .container{
+        width: 960px;
+        margin-right: 0;
+    }
+    .desktop{
+        width: 55%;
+    }
+    .learn{
+        width: 960px;
+        margin-right: 0;
+    }
+}
+
+/*768px - 992px*/
+@media screen and (max-width: 992px){
+    .container{
+        width: 720px;
+        margin: auto;
+    }
+    .wrapper{
+        flex-direction: column;
+    }  
+    .offer{
+        width: 100%;
+    }  
+    .intro{
+        width: auto;
+    } 
+    .desktop{
+        display: block;
+        width: 549px;
+        margin: 72px auto 0;
+    }
+    .skills{
+        flex-direction: column;
+
+    }
+    .skill{
+        width: auto;
+    }
+    .learn{
+        width: 100%;
+    }
+    .btn{
+        width: 100%;
+    } 
+}
+
+/*567px - 768px*/
+@media screen and (max-width: 768px){
+    .container{
+        width: 540px;
+    } 
+    .desktop{
+        width: 100%;
+    }  
+}
+
+/*320px - 576px*/
+@media screen and (max-width: 576px){
+    .container{
+        width: 90%;
+        margin: auto;
+    }
+    .intro{
+        width: 90%;
+    }
+    .mail .container{
+        width: 90%;
+        margin: auto;
+    }
+    .input{
+        width: 290px;
+    }
+    .form{
+        width: 290px;
+    }
+    .wrapper{
+        text-align: center;
+        width: 100%;
+    }
+    .wrapper .intro{
+        margin: 30px auto;
+    }
+}
