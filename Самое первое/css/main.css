@@ -1,0 +1,59 @@
+h1{
+    color: red;
+}
+
+header p{
+    margin: 0;
+    background: blue;
+    color: white;
+    width: 100px;
+    margin-bottom: 80px; /*border-bottom: 70px solid white;*/
+}
+
+header img{
+    width: 150px;
+}
+
+.letter{
+    color: red;
+}
+
+.one h2{
+    margin: 0;
+    background: green;
+    color: white;
+    padding: 7px;
+}
+
+.two h2{
+    margin: 0;
+    background: green;
+    color: white;
+    padding: 40px; 
+}
+
+.container{
+    width: 672px;
+}
+
+.container p{
+    text-align: center;
+    margin-right: 70px;
+}
+
+.box li{
+    font-size: 25px;
+    border: 1px solid black;
+}
+
+.box p{
+    margin-bottom: 30px;
+}
+
+footer h2{
+    background: green;
+    color: white;
+    padding: 7px;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
