@@ -277,3 +277,15 @@ p{
 .col3{
     margin-right: 32px;
 }
+
+.bottom{
+    position: absolute;
+    width: 1168px;
+    height: 352px;
+    left: 56px;
+    top: 1117px;
+}
+
+.wraper{
+    
+}
