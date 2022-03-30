@@ -18,13 +18,13 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .container{
-    width: auto;
-    margin: 0;
+    width: 1170px;
+    margin: 0 auto;
 }
 .feedback{
-    margin-left: 50%;
-    margin-top: 100px;
-    width: max-content;
-    height: max-content;
+    margin: auto;
+    margin-top: 20%;
+    width: 50%;
+    height: 70%;
     background-color: #fff;
 }
