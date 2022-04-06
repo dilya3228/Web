@@ -1,63 +1,63 @@
-var btn = document.getElementById('btn');
+$(function () {
+	$('.menu-open').click(function () {
+		$('.menu').toggleClass('show-menu')
+	})
+});
+const prev = document.getElementById('btn-prev'),
+      next = document.getElementById('btn-next'),
+      slides = document.querySelectorAll('.slide'),
+      dots = document.querySelectorAll('.dot')
 
-btn.onclick = function (e) {
-	e.preventDefault();
-	var text = document.querySelector('p.intro');
-	text.classList.add('red');
-	var img = document.querySelector('.desktop');
-	img.style.display = 'none';
-	document.querySelector('.skill-change').style.marginLeft = '50px';
+let index = 0;
+
+const activeSlide = n => {
+    for(slide of slides){
+        slide.classList.remove('active');
+    }
+    slides[n].classList.add('active');
 }
 
-$(function () {
-	$(window).scroll(function() {
-	    $('#learn .section-title').each(function(){
-	        var imagePos = $(this).offset().top;
+const activeDot = n => {
+    for(dot of dots){
+        dot.classList.remove('active');
+    }
+    dots[n].classList.add('active');
+}
 
-	        var topOfWindow = $(window).scrollTop();
-	        if (imagePos < topOfWindow+650) {
-	            $(this).addClass("fadeInUp");
-	        }
-	    });
-	});
-	$(window).scroll(function() {
-	    $('.mail').each(function(){
-	        var imagePos = $(this).offset().top;
+const prepareCurrentSlide = ind => {
+    activeSlide(index);
+    activeDot(index);
+}
 
-	        var topOfWindow = $(window).scrollTop();
-	        if (imagePos < topOfWindow+650) {
-	            $(this).addClass("fadeInUp");
-	        }
-	    });
-	});
-    $(window).scroll(function() {
-	    $('.skill').each(function(){
-	        var imagePos = $(this).offset().top;
+const nextSlide = () => {
+    if(index == slides.length - 1){
+        index = 0;
+        prepareCurrentSlide(index);
+    } else{
+        index++;
+        prepareCurrentSlide(index);
+    }
+}
 
-	        var topOfWindow = $(window).scrollTop();
-	        if (imagePos < topOfWindow+650) {
-	            $(this).addClass("fadeInLeft");
-	        }
-	    });
-	});
-    $(window).scroll(function() {
-	    $('.skill-change').each(function(){
-	        var imagePos = $(this).offset().top;
+const prevSlide = () => {
+    if(index == 0){
+        index = slides.length - 1;
+        prepareCurrentSlide(index);
+    } else{
+        index--;
+        prepareCurrentSlide(index);
+    }
+}
 
-	        var topOfWindow = $(window).scrollTop();
-	        if (imagePos < topOfWindow+650) {
-	            $(this).addClass("fadeInRight");
-	        }
-	    });
-	});
-    $(window).scroll(function() {
-	    $('.mail').each(function(){
-	        var imagePos = $(this).offset().top;
-
-	        var topOfWindow = $(window).scrollTop();
-	        if (imagePos < topOfWindow+650) {
-	            $(this).addClass("fadeInUp");
-	        }
-	    });
-	});
+dots.forEach((item, indexDot)=> {
+    item.addEventListener('click', () => {
+        index = indexDot;
+        prepareCurrentSlide(index);
+        clearInterval(interval);
+    })
 })
+
+const interval = setInterval(nextSlide, 999999999);
+
+next.addEventListener('click', nextSlide);
+prev.addEventListener('click', prevSlide);

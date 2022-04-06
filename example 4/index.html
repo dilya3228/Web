@@ -1,191 +1,570 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Индекс еда</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ёлки-палки — магазин ёлок</title>
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header container">
-        <a href="/" class="logo">
-            <img width="128" src="img/logo.png" alt="Лого: Индекс Еда" class="logo-img">
-        </a>
-        <form action="#" class="search-form">
-            <input type="search" class="search-input" placeholder="Блюда">
-            <button class="search-button">
-                <img src="img/search-icon.svg" class="search-icon" alt="search-icon">
-            </button>
-        </form>
-        <div class="auth">
-           <a href="#" class="login">Войти</a> 
+
+  <header class="header">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-3 col-md-3 mb-3 mb-md-0">
+          <a href="/">
+            <img src="img/logo.png" alt="Логотип Ёлки палки" class="header-logo">
+          </a>
         </div>
-        <!-- /.auth -->
-        <a href="#" class="shopping-cart">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_5:2)">
-                    <path
-                        d="M22.713 4.077C22.4317 3.73944 22.0796 3.46795 21.6815 3.28182C21.2835 3.09568 20.8494 2.99946 20.41 3H4.242L4.2 2.649C4.11405 1.91942 3.76338 1.24673 3.21449 0.758478C2.6656 0.270223 1.95663 0.000341793 1.222 0L1 0C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1C0 1.26522 0.105357 1.51957 0.292893 1.70711C0.48043 1.89464 0.734784 2 1 2H1.222C1.46693 2.00003 1.70334 2.08996 1.88637 2.25272C2.06941 2.41547 2.18634 2.63975 2.215 2.883L3.591 14.583C3.73385 15.7998 4.31848 16.9218 5.23391 17.736C6.14934 18.5502 7.33185 19 8.557 19H19C19.2652 19 19.5196 18.8946 19.7071 18.7071C19.8946 18.5196 20 18.2652 20 18C20 17.7348 19.8946 17.4804 19.7071 17.2929C19.5196 17.1054 19.2652 17 19 17H8.557C7.93806 16.9983 7.3348 16.8051 6.82994 16.4471C6.32507 16.089 5.94331 15.5835 5.737 15H17.657C18.8293 15.0001 19.9643 14.5882 20.8638 13.8364C21.7633 13.0846 22.37 12.0407 22.578 10.887L23.363 6.533C23.4414 6.10101 23.4237 5.65707 23.3114 5.23264C23.1991 4.80821 22.9948 4.41368 22.713 4.077V4.077ZM21.4 6.178L20.614 10.532C20.4891 11.225 20.1245 11.852 19.5839 12.3032C19.0433 12.7544 18.3612 13.0011 17.657 13H5.419L4.478 5H20.41C20.5569 4.99912 20.7022 5.03062 20.8355 5.09226C20.9689 5.15389 21.087 5.24415 21.1815 5.35661C21.276 5.46907 21.3446 5.60097 21.3824 5.74294C21.4201 5.8849 21.4262 6.03344 21.4 6.178V6.178Z"
-                        fill="white" />
-                    <path
-                        d="M7.00012 24.0006C8.10469 24.0006 9.00011 23.1052 9.00011 22.0006C9.00011 20.8961 8.10469 20.0006 7.00012 20.0006C5.89555 20.0006 5.00012 20.8961 5.00012 22.0006C5.00012 23.1052 5.89555 24.0006 7.00012 24.0006Z"
-                        fill="white" />
-                    <path
-                        d="M17 24.0006C18.1046 24.0006 19 23.1052 19 22.0006C19 20.8961 18.1046 20.0006 17 20.0006C15.8954 20.0006 15 20.8961 15 22.0006C15 23.1052 15.8954 24.0006 17 24.0006Z"
-                        fill="white" />
-                </g>
-                <defs>
-                    <clipPath id="clip0_5:2">
-                        <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                </defs>
-            </svg>
-            <span class="shopping-counter">12</span>
-        </a>
-    </header>
-    <main class="container">
-        <div class="slider container">
-            <div class="slide slide-text-light slide-summer">
-               <div class="slide-content">
-                    <h2 class="slide-title">Неделя летних овощей</h2>
-                    <p class="slide-text">Специальная овощная корзина. Новые продукты,
-                        специальные цены, скидки!</p>
-                    <a href="#" class="button button-primary">Заказать со скидкой</a>
-               </div>
-            </div>
-            <!-- /.slide -->
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-6 col-md-4 mb-3 mb-md-0">
+          <span class="header-description">
+            Магазин <br>ёлок с доставкой <br>по всей <span class="text-color-green">России</span>
+          </span>
         </div>
-        <!-- /.slider -->
-        <div class="container">
-            <div class="promo">
-                <section class="card card-text-light sweet-basket">
-                    <img src="img/sweet-basket.png" alt="сладкая корзина" class="card-image">
-                    <div class="card-header">
-                        <h3 class="card-title">Сладкая корзина</h3>
-                        <p class="card-description">Произвольный выбор
-                            десертов по Вашему
-                            желанию.</p>
-                    </div>
-                    <!--/.card-header -->
-                    <div class="card-footer">
-                        <srong class="card-price">ОТ 1 300 ₽</srong>
-                        <span class="card-delivery">стоимость доставки до 200 ₽</span>
-                        <a href="#" class="button button-default">Собрать корзину</a>
-                    </div>
-                    <!-- /.card-footer -->
-                </section>
-                <section class="card card-text-light min-work">
-                    <img src="img/min-work.png" alt="минимум усилий" class="card-image">
-                    <div class="card-header">
-                        <h3 class="card-title">Минимум усилий</h3>
-                        <p class="card-description">Произвольный выбор
-                            десертов по Вашему
-                            желанию.</p>
-                    </div>
-                    <!--/.cardq-header -->
-                    <div class="card-footer">
-                        <srong class="card-price">ОТ 700 ₽</srong>
-                        <span class="card-delivery">стоимость доставки до 200 ₽</span>
-                        <a href="#" class="button button-default">Собрать корзину</a>
-                    </div>
-                    <!-- /.cardq-footer -->
-                </section>
-            </div>
-            <!-- /.promo -->
+        <!-- /.col-lg-6 -->
+        <div class="col-lg-3 col-md-5 header-contacts">
+          <a href="tel:+78006548745" class="header-phone">8 (800) 654-87-45</a>
+          <span class="header-info">Звонок по России бесплатный</span>
+          <a data-fancybox data-src="#modal" href="javascript:;" class="callback">Заказать звонок</a>
         </div>
-        <section class="delivery-week container">
-            <h2 class="section-title">Доставка готовой еды на неделю</h2>
-            <div class="delivery-cards">
-                <div class="delivery-card">
-                    <img src="img/cards/card-1.png" alt="" class="delivery-image">
-                    <span class="delivery-tag tag-1">ЗОЖ</span>
-                </div>
-                <!-- /.delivery-card -->
-                <div class="delivery-card">
-                    <img src="img/cards/card-2.png" alt="" class="delivery-image">
-                    <span class="delivery-tag tag-2">Овощное</span>
-                </div>
-                <!-- /.delivery-card -->
-                <div class="delivery-card">
-                    <img src="img/cards/card-3.png" alt="" class="delivery-image">
-                    <span class="delivery-tag tag-3">Мясное</span>
-                </div>
-                <!-- /.delivery-card -->
-                <div class="delivery-card">
-                    <img src="img/cards/card-4.png" alt="" class="delivery-image">
-                    <span class="delivery-tag tag-4">Птица</span>
-                </div>
-                <!-- /.delivery-card -->
-                <div class="delivery-card">
-                    <img src="img/cards/card-5.png" alt="" class="delivery-image">
-                    <span class="delivery-tag tag-5">Рыбное</span>
-                </div>
-                <!-- /.delivery-card -->
-                <div class="delivery-card">
-                    <img src="img/cards/card-6.png" alt="" class="delivery-image">
-                    <span class="delivery-tag tag-6">Детское</span>
-                </div>
-                <!-- /.delivery-card -->
-                <div class="delivery-card">
-                    <img src="img/cards/card-7.png" alt="" class="delivery-image">
-                    <span class="delivery-tag tag-7">Родителям</span>
-                </div>
-                <!-- /.delivery-card -->
-                <div class="delivery-card">
-                    <img src="img/cards/card-8.png" alt="" class="delivery-image">
-                    <span class="delivery-tag tag-8">Праздничное</span>
-                </div>
-                <!-- /.delivery-card -->
+        <!-- /.col-lg-3 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Красивые ёлки и новогодние игрушки Ёлки-палки</h1>
+      <p class="hero-description">первая в россии эксклюзивная доставка ёлок и игрушек для людей, которые ждут <b>новый год</b></p>
+
+      <!-- Слайдер с цветами -->
+      <div class="swiper-container trees-slider">
+        <!-- Обертка слайдов -->
+        <div class="swiper-wrapper">
+          <!-- Слайды -->
+          <div class="swiper-slide">
+            <img src="img/trees/tree-1.png" alt="tree" class="slide-image">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/trees/tree-2.png" alt="tree" class="slide-image">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/trees/tree-3.png" alt="tree" class="slide-image">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/trees/tree-4.png" alt="tree" class="slide-image">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/trees/tree-5.png" alt="tree" class="slide-image">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/trees/tree-6.png" alt="tree" class="slide-image">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/trees/tree-3.png" alt="tree" class="slide-image">
+          </div>
+        </div>
+
+        <!-- Стрелки слайдера -->
+        <div class="swiper-button-prev swiper-button-prev-1"></div>
+        <div class="swiper-button-next swiper-button-next-1"></div>
+      </div>
+      <!-- ./swiper-container -->
+
+      <span class="hero-cta">Закажите ёлку со скидкой 10%</span>
+
+      <a data-fancybox data-src="#alert" href="javascript:;" class="button">Заказать ёлку</a>
+      
+    </div>
+    <!-- /.container -->
+  </section>
+
+  <section class="reviews">
+    <div class="container">
+      <h2 class="section-title">Мы доставляем только лучшие ёлки</h2>
+
+      <!-- Слайдер с отзывами -->
+      <div class="swiper-container reviews-slider">
+        <!-- обертка слайдов -->
+        <div class="swiper-wrapper">
+          <!-- слайды -->
+          <div class="swiper-slide review-slide d-flex flex-column flex-md-row align-items-center">
+            <div class="review-image d-flex align-items-center justify-content-center flex-column">
+              <img src="./img/reviews/review-1.png" alt="review">
+              <span class="review-name">Дарья Макеева</span>
+              <span class="review-city">г. Санкт-Петербург</span>
             </div>
-            <!-- /.delivery-cards -->
-        </section>
-        <section class="section-grey category">
-            <div class="container">
-                <h2 class="section-title">Категории блюд</h2>
-                <ul class="tabs">
-                    <li class="tabs-item">
-                        <a href="" class="tabs-link active">Популярные блюда</a>
-                    </li>
-                    <li class="tabs-item">
-                        <a href="" class="tabs-link">Овощное</a>
-                    </li>
-                    <li class="tabs-item">
-                        <a href="" class="tabs-link">Мясное</a>
-                    </li>
-                </ul>
-                <!-- /.tabs -->
-                <div class="tabs-content">
-                    <div class="tabs-card">
-                        <img src="img/tabs-image.png" alt="" class="tabs-image">
-                        <div class="tabs-card-content">
-                            <h3 class="tabs-title">Куриные крылья под
-                                соусом Терияки</h3>
-                            <p class="tabs-description">
-                                Соус Терияки придумали повора из Японии. По традиции его используют в качестве маринада для...
-                            </p>
-                            <div class="tabs-info">
-                                <div class="tabs-good">
-                                    <span class="tabs-price">260 ₽</span>
-                                    <span class="tabs-weight">500 гр</span>
-                                </div>
-                                <!-- /.tabs-good -->
-                                <button class="button button-outline">В корзину</button>
-                            </div>
-                            <!-- /.tabs-info -->
-                        </div>
-                        <!-- /.tabs-card-content -->
-                    </div>
-                    <!-- /.tabs-card -->
-                </div>
-                <!-- /.tabs-content -->
+            <div class="review-text">
+              <p class="review">
+                Я очень довольна таким отношением к делу. Обслужили просто превосходно, я заказывала по телефону — так подробно мне всё объяснили, помогли выбрать ёлку для моей квартиры, и доставили домой, она очень понравилась, спасибо вам огромное.
+              </p>
+              <!-- <a href="javascript:;" id="review-1" class="review-link">Посмотреть фотографии ёлки</a> -->
             </div>
-            <!-- /.container -->
-        </section>
-    </main>
+          </div>
+          <!-- ./swiper-slide -->
+          <div class="swiper-slide review-slide d-flex flex-column flex-md-row align-items-center">
+            <div class="review-image d-flex align-items-center justify-content-center flex-column">
+              <img src="./img/reviews/review-1.png" alt="review">
+              <span class="review-name">Дарья Макеева</span>
+              <span class="review-city">г. Санкт-Петербург</span>
+            </div>
+            <div class="review-text">
+              <p class="review">
+                Я очень довольна таким отношением к делу. Обслужили просто превосходно, я заказывала по телефону — так подробно мне всё объяснили, помогли выбрать ёлку для моей квартиры, и доставили домой, она очень понравилась, спасибо вам огромное.
+              </p>
+              <!-- <a href="javascript:;" id="review-1" class="review-link">Посмотреть фотографии ёлки</a> -->
+            </div>
+          </div>
+          <!-- ./swiper-slide -->
+        </div>
+        <!-- ./swiper-wrapper -->
+
+        <!-- If we need navigation buttons -->
+        <a class="swiper-button-prev swiper-button-prev-2"></a>
+        <a class="swiper-button-next swiper-button-next-2"></a>
+
+      </div>
+      <!-- ./swiper-container -->
+
+    </div>
+    <!-- /.container -->
+  </section>
+
+  <section class="advantages">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-5 mb-md-0">
+          <div class="advantages-wrapper">
+            <img src="img/advantages/advantages-1.png" alt="Доставляем ёлки прямо до дверей квартиры" class="advantages-image">
+          </div>
+          <!-- /.advantage-wrapper -->
+          <h3 class="advantages-title">Доставляем ёлки прямо до дверей квартиры</h3>
+        </div>
+        <!-- /.col -->
+        <div class="col-md-4 mb-5 mb-md-0">
+          <div class="advantages-wrapper">
+            <img src="img/advantages/advantages-2.png" alt="Игрушки выполнены качественно и ваш кот их не разобьет" class="advantages-image">
+          </div>
+          <!-- /.advantages-wrapper -->
+          <h3 class="advantages-title">Игрушки выполнены качественно и ваш кот их не разобьет</h3>
+        </div>
+        <!-- /.col -->
+        <div class="col-md-4 mb-5 mb-md-0">
+          <div class="advantages-wrapper">
+            <img src="img/advantages/advantages-3.png" alt="Мы являемся первыми на рынке и всегда рады помочь с выбором ёлки" class="advantages-image">
+          </div>
+          <!-- /.advantages-wrapper -->
+          <h3 class="advantages-title">Мы являемся первыми на рынке и всегда рады помочь с выбором ёлки</h3>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  
+  <section class="goods">
+    <div class="container">
+      <h2 class="section-title">Наряди свою ёлку <span>прямо сейчас!</span></h2>
+      <p class="section-description">Выберите желаемые игрушки и наши ребята красиво оформят и доставят ёлку прямо до дверей вашей квартиры!</p>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <img src="img/trees/toy-1.png" alt="toy" class="card-image">
+            <h3 class="card-title">Ёлочная игрушка</h3>
+            <span class="card-label">Выберите цвет:</span>
+
+            <div class="colors d-flex align-items-center justify-content-between">
+              <label class="color-label white" for="toy-white"></label>
+              <input class="color-input" type="radio" name="color" id="toy-white" value="white">
+              
+              <label class="color-label yellow" for="toy-yellow"></label>
+              <input class="color-input" type="radio" name="color" id="toy-yellow" value="yellow">
+
+              <label class="color-label green" for="toy-green"></label>
+              <input class="color-input" type="radio" name="color" id="toy-green" value="green">
+
+              <label class="color-label red" for="toy-red"></label>
+              <input class="color-input" type="radio" name="color" id="toy-red" value="red">
+
+              <label class="color-label blue" for="toy-blue"></label>
+              <input class="color-input" type="radio" name="color" id="toy-blue" value="blue">
+            </div>
+            <!-- /.colors -->
+
+            <span class="card-label">Количество:</span>
+
+            <div class="counter-group d-flex justify-content-center align-items-center">
+              <button class="counter-button counter-button-minus">-</button>
+              <input type="text" class="counter-input" value="1">
+              <button class="counter-button counter-button-plus">+</button>
+            </div>
+            <!-- /.counter-group -->
+
+            <button class="button card-button">Заказать</button>
+            
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <img src="img/trees/tree-1.png" alt="tree" class="card-image">
+            <h3 class="card-title">Живая ёлка</h3>
+            <span class="card-label">Выберите цвет игрушек:</span>
+
+            <div class="colors d-flex align-items-center justify-content-between">
+              <label class="color-label white" for="white"></label>
+              <input class="color-input" type="radio" name="color" id="white" value="white">
+              
+              <label class="color-label yellow" for="yellow"></label>
+              <input class="color-input" type="radio" name="color" id="yellow" value="yellow">
+
+              <label class="color-label green" for="green"></label>
+              <input class="color-input" type="radio" name="color" id="green" value="green">
+
+              <label class="color-label red" for="red"></label>
+              <input class="color-input" type="radio" name="color" id="red" value="red">
+
+              <label class="color-label blue" for="blue"></label>
+              <input class="color-input" type="radio" name="color" id="blue" value="blue">
+            </div>
+            <!-- /.colors -->
+
+            <span class="card-label">Количество:</span>
+
+            <div class="counter-group d-flex justify-content-center align-items-center">
+              <button class="counter-button counter-button-minus">-</button>
+              <input type="text" class="counter-input" value="1">
+              <button class="counter-button counter-button-plus">+</button>
+            </div>
+            <!-- /.counter-group -->
+
+            <button class="button card-button">Заказать</button>
+            
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <img src="img/trees/toy-2.png" alt="toy" class="card-image">
+            <h3 class="card-title">Ёлочная игрушка</h3>
+            <span class="card-label">Выберите цвет:</span>
+
+            <div class="colors d-flex align-items-center justify-content-between">
+              <label class="color-label white" for="white"></label>
+              <input class="color-input" type="radio" name="color" id="white" value="white">
+              
+              <label class="color-label yellow" for="yellow"></label>
+              <input class="color-input" type="radio" name="color" id="yellow" value="yellow">
+
+              <label class="color-label green" for="green"></label>
+              <input class="color-input" type="radio" name="color" id="green" value="green">
+
+              <label class="color-label red" for="red"></label>
+              <input class="color-input" type="radio" name="color" id="red" value="red">
+
+              <label class="color-label blue" for="blue"></label>
+              <input class="color-input" type="radio" name="color" id="blue" value="blue">
+            </div>
+            <!-- /.colors -->
+
+            <span class="card-label">Количество:</span>
+
+            <div class="counter-group d-flex justify-content-center align-items-center">
+              <button class="counter-button counter-button-minus">-</button>
+              <input type="text" class="counter-input" value="1">
+              <button class="counter-button counter-button-plus">+</button>
+            </div>
+            <!-- /.counter-group -->
+
+            <button class="button card-button">Заказать</button>
+            
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <img src="img/trees/tree-3.png" alt="tree" class="card-image">
+            <h3 class="card-title">Искусственная ёлка</h3>
+            <span class="card-label">Выберите цвет игрушек:</span>
+
+            <div class="colors d-flex align-items-center justify-content-between">
+              <label class="color-label white" for="white"></label>
+              <input class="color-input" type="radio" name="color" id="white" value="white">
+              
+              <label class="color-label yellow" for="yellow"></label>
+              <input class="color-input" type="radio" name="color" id="yellow" value="yellow">
+
+              <label class="color-label green" for="green"></label>
+              <input class="color-input" type="radio" name="color" id="green" value="green">
+
+              <label class="color-label red" for="red"></label>
+              <input class="color-input" type="radio" name="color" id="red" value="red">
+
+              <label class="color-label blue" for="blue"></label>
+              <input class="color-input" type="radio" name="color" id="blue" value="blue">
+            </div>
+            <!-- /.colors -->
+
+            <span class="card-label">Количество:</span>
+
+            <div class="counter-group d-flex justify-content-center align-items-center">
+              <button class="counter-button counter-button-minus">-</button>
+              <input type="text" class="counter-input" value="1">
+              <button class="counter-button counter-button-plus">+</button>
+            </div>
+            <!-- /.counter-group -->
+
+            <button class="button card-button">Заказать</button>
+            
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <img src="img/trees/toy-4.png" alt="toy" class="card-image">
+            <h3 class="card-title">Ёлочная игрушка</h3>
+            <span class="card-label">Выберите цвет:</span>
+
+            <div class="colors d-flex align-items-center justify-content-between">
+              <label class="color-label white" for="white"></label>
+              <input class="color-input" type="radio" name="color" id="white" value="white">
+              
+              <label class="color-label yellow" for="yellow"></label>
+              <input class="color-input" type="radio" name="color" id="yellow" value="yellow">
+
+              <label class="color-label green" for="green"></label>
+              <input class="color-input" type="radio" name="color" id="green" value="green">
+
+              <label class="color-label red" for="red"></label>
+              <input class="color-input" type="radio" name="color" id="red" value="red">
+
+              <label class="color-label blue" for="blue"></label>
+              <input class="color-input" type="radio" name="color" id="blue" value="blue">
+            </div>
+            <!-- /.colors -->
+
+            <span class="card-label">Количество:</span>
+
+            <div class="counter-group d-flex justify-content-center align-items-center">
+              <button class="counter-button counter-button-minus">-</button>
+              <input type="text" class="counter-input" value="1">
+              <button class="counter-button counter-button-plus">+</button>
+            </div>
+            <!-- /.counter-group -->
+
+            <button class="button card-button">Заказать</button>
+            
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <img src="img/trees/tree-5.png" alt="tree" class="card-image">
+            <h3 class="card-title">Ёлочка в горшке</h3>
+            <span class="card-label">Выберите цвет игрушек:</span>
+
+            <div class="colors d-flex align-items-center justify-content-between">
+              <label class="color-label white" for="white"></label>
+              <input class="color-input" type="radio" name="color" id="white" value="white">
+              
+              <label class="color-label yellow" for="yellow"></label>
+              <input class="color-input" type="radio" name="color" id="yellow" value="yellow">
+
+              <label class="color-label green" for="green"></label>
+              <input class="color-input" type="radio" name="color" id="green" value="green">
+
+              <label class="color-label red" for="red"></label>
+              <input class="color-input" type="radio" name="color" id="red" value="red">
+
+              <label class="color-label blue" for="blue"></label>
+              <input class="color-input" type="radio" name="color" id="blue" value="blue">
+            </div>
+            <!-- /.colors -->
+
+            <span class="card-label">Количество:</span>
+
+            <div class="counter-group d-flex justify-content-center align-items-center">
+              <button class="counter-button counter-button-minus">-</button>
+              <input type="text" class="counter-input" value="1">
+              <button class="counter-button counter-button-plus">+</button>
+            </div>
+            <!-- /.counter-group -->
+
+            <button class="button card-button">Заказать</button>
+            
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <img src="img/trees/toy-2.png" alt="toy" class="card-image">
+            <h3 class="card-title">Ёлочная игрушка</h3>
+            <span class="card-label">Выберите цвет:</span>
+
+            <div class="colors d-flex align-items-center justify-content-between">
+              <label class="color-label white" for="white"></label>
+              <input class="color-input" type="radio" name="color" id="white" value="white">
+              
+              <label class="color-label yellow" for="yellow"></label>
+              <input class="color-input" type="radio" name="color" id="yellow" value="yellow">
+
+              <label class="color-label green" for="green"></label>
+              <input class="color-input" type="radio" name="color" id="green" value="green">
+
+              <label class="color-label red" for="red"></label>
+              <input class="color-input" type="radio" name="color" id="red" value="red">
+
+              <label class="color-label blue" for="blue"></label>
+              <input class="color-input" type="radio" name="color" id="blue" value="blue">
+            </div>
+            <!-- /.colors -->
+
+            <span class="card-label">Количество:</span>
+
+            <div class="counter-group d-flex justify-content-center align-items-center">
+              <button class="counter-button counter-button-minus">-</button>
+              <input type="text" class="counter-input" value="1">
+              <button class="counter-button counter-button-plus">+</button>
+            </div>
+            <!-- /.counter-group -->
+
+            <button class="button card-button">Заказать</button>
+            
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <img src="img/trees/toy-3.png" alt="toy" class="card-image">
+            <h3 class="card-title">Ёлочная игрушка</h3>
+            <span class="card-label">Выберите цвет:</span>
+
+            <div class="colors d-flex align-items-center justify-content-between">
+              <label class="color-label white" for="white"></label>
+              <input class="color-input" type="radio" name="color" id="white" value="white">
+              
+              <label class="color-label yellow" for="yellow"></label>
+              <input class="color-input" type="radio" name="color" id="yellow" value="yellow">
+
+              <label class="color-label green" for="green"></label>
+              <input class="color-input" type="radio" name="color" id="green" value="green">
+
+              <label class="color-label red" for="red"></label>
+              <input class="color-input" type="radio" name="color" id="red" value="red">
+
+              <label class="color-label blue" for="blue"></label>
+              <input class="color-input" type="radio" name="color" id="blue" value="blue">
+            </div>
+            <!-- /.colors -->
+
+            <span class="card-label">Количество:</span>
+
+            <div class="counter-group d-flex justify-content-center align-items-center">
+              <button class="counter-button counter-button-minus">-</button>
+              <input type="text" class="counter-input" value="1">
+              <button class="counter-button counter-button-plus">+</button>
+            </div>
+            <!-- /.counter-group -->
+
+            <button class="button card-button">Заказать</button>
+            
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col-lg-3 col-md-6 -->
+      </div>
+      <!-- /.row -->
+
+      <!-- <a href="#" class="more">Все товары</a> -->
+      
+    </div>
+    <!-- /.container -->
+  </section>
+
+  <section class="offer">
+    <div class="container">
+      <h2 class="section-title offer-title">Остались вопросы?</h2>
+      <a data-fancybox data-src="#modal" href="javascript:;" class="offer-link">Закажите звонок нашего специалиста!</a>
+      <span class="offer-label">или позвоните по телефону</span>
+      <a href="tel:+78006548745" class="offer-phone">8 (800) 654-87-45</a>
+    </div>
+    <!-- /.container -->
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-bg">
+      <div class="row py-5">
+        <div class="col-md-6 mb-5 mb-md-0">
+          <nav>
+            <ul class="footer-menu d-flex">
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">Доставка</a>
+              </li>
+              <li class="footer-menu-item">
+                <a href="#" class="footer-menu-link">Оплата</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="social">
+            Присоединяйтесь к нам: 
+            <a href="https://vk.com/" class="social-link">
+              <img src="img/vk.png" alt="vk">
+            </a>
+          </div>
+          <!-- /.social -->
+        </div>
+        <!-- /.col-md-6 -->
+        <div class="col-md-6 footer-info">
+          <span class="footer-label">Отдел обслуживания клиентов</span>
+          <a href="tel:+78006548745" class="footer-phone">8 (800) 654-87-45</a>
+          <span class="footer-label">Ежедневно, круглосуточно.</span>
+        </div>
+        <!-- /.col-md-6 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <div class="modal" id="modal">
+    <h2 class="modal-title">Закажите обратный звонок</h2>
+    <form action="#">
+      <input type="tel" class="modal-input" placeholder="+7 (___) __-__-___">
+      <button class="button modal-button">Перезвоните мне</button>
+    </form>
+  </div>
+
+  <div class="modal" id="alert">
+    <h2 class="modal-title">Это демо-сайт</h2>
+    <p class="modal-text">Некоторые функции этого сайта не работают. Я делаю ту часть, которая видна пользователю. Если сайт нужно сделать с серверной частью, я работаю в паре с бэкенд-разработчиком</p>
+    <button class="button modal-button">Понятно</button>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
