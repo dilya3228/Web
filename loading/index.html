@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        progress { 
+        background-color: #2c16f3; 
+        border-radius: 10px; 
+        border: 0; 
+        height: 50px; 
+        width: 400px; 
+       } 
+        
+    </style> 
+</head>
+<body>
+
+    <input value="" type="text" />
+    <button>to Array</button>
+    <progress max="100" value="0" id="demo-progress-bar" class="load"></progress> 
+
+</body>
+    <script> 
+
+var inputVal,
+    button = document.querySelector('button'),
+    array = [];
+
+button.addEventListener('click', function() {
+  inputVal = document.querySelector('input').value;
+  array = inputVal.split(',');
+  
+  return(array);
+});
+
+
+/*(function() {
+    var adduser_input=document.getElementById('add_id_user');
+    document.getElementById('formIdName').addEventListener('submit',call_add);
+    function call_add() {
+        return arr(adduser_input.value);
+    }
+})();*/
+
+        document.getElementById( 'demo-progress-bar' ).value = 0; 
+        var counter = 0; 
+            function progressDemo() { 
+            counter++; 
+            document.getElementById( 'demo-progress-bar' ).value = counter; 
+            if( counter == 100 ) { 
+            clearInterval( timer ); 
+            } 
+        } 
+        var timer = setInterval( progressDemo, 100 );
+    </script> 
+</html>
